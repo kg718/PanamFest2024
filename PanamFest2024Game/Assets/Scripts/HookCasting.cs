@@ -7,6 +7,7 @@ public class HookCasting : MonoBehaviour
 
     private PlayerMovement movement;
 
+    [SerializeField] private Transform CastPoint;
     [SerializeField] private Transform HookPoint;
     [SerializeField] private GameObject BobberPrefab;
 
@@ -35,7 +36,7 @@ public class HookCasting : MonoBehaviour
     {
         if(Bobber == null)
         {
-            Bobber = Instantiate(BobberPrefab, transform.position, Quaternion.identity);
+            Bobber = Instantiate(BobberPrefab, CastPoint.position, Quaternion.identity);
             BobberLaunch Launcher = Bobber.GetComponent<BobberLaunch>();
             Launcher.TargetPosition = HookPoint.position;
         }

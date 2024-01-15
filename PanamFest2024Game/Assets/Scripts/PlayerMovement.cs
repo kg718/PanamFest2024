@@ -53,6 +53,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Accelerate()
     {
-        rb.AddForce(new Vector3(InputDir.x, 0f, InputDir.y) * MoveSpeed, ForceMode.Force);
+        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y) * MoveSpeed, ForceMode.Force);
     }
 }

@@ -8,7 +8,6 @@ public class BobberLaunch : MonoBehaviour
     private Rigidbody rb;
     private Vector2 InputDir;
     private LineRenderer Line;
-    private BobberHooking Hooking;
 
     [HideInInspector] public Vector3 TargetPosition;
     private bool Casting;
@@ -23,7 +22,6 @@ public class BobberLaunch : MonoBehaviour
         Controls.Enable();
         rb = GetComponent<Rigidbody>();
         Line = GetComponent<LineRenderer>();
-        Hooking = GetComponent<BobberHooking>();
         Casting = true;
         CurrentCastDelay = CastDelay;
         CastPoint = GameObject.Find("CastPoint").transform;

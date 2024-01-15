@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8198614223116076310}
   - component: {fileID: 3122041537570849100}
   - component: {fileID: 8602168563303116881}
+  - component: {fileID: 6187208112121168877}
   m_Layer: 7
   m_Name: Bobber
   m_TagString: Bobber
@@ -285,3 +286,16 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &6187208112121168877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6466845158812444573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d7415f3cc3d354b822badd377fcf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasHookedFish: 0

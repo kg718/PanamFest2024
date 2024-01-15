@@ -6,7 +6,7 @@ public class BobberHooking : MonoBehaviour
 
     void Start()
     {
-        
+        GameObject.FindWithTag("Player").GetComponent<HookCasting>().Hooking = this;
     }
 
     void Update()

@@ -10,6 +10,7 @@ public class HookCasting : MonoBehaviour
     [SerializeField] private Transform CastPoint;
     [SerializeField] private Transform HookPoint;
     [SerializeField] private GameObject BobberPrefab;
+    [HideInInspector] public BobberHooking Hooking;
 
     private GameObject Bobber;
 
@@ -18,6 +19,7 @@ public class HookCasting : MonoBehaviour
         Controls = new MasterInput();
         Controls.Enable();
         movement = GetComponent<PlayerMovement>();
+        
     }
 
     void Update()
@@ -34,15 +36,19 @@ public class HookCasting : MonoBehaviour
 
     public void Cast()
     {
-        if(Bobber == null)
+        if (Bobber == null)
         {
+
             Bobber = Instantiate(BobberPrefab, CastPoint.position, Quaternion.identity);
             BobberLaunch Launcher = Bobber.GetComponent<BobberLaunch>();
             Launcher.TargetPosition = HookPoint.position;
         }
         else
         {
-            Destroy(Bobber);
+            if (!Hooking.HasHookedFish)
+            {
+                Destroy(Bobber);
+            }
         }
     }
 

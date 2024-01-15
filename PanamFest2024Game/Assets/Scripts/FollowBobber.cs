@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FollowBobber : MonoBehaviour
 {
@@ -25,7 +26,19 @@ public class FollowBobber : MonoBehaviour
 
     public void OnCastLine()
     {
-        FollowPoint = GameObject.FindWithTag("Bobber").transform;
+        FindPoint();
+    }
+
+    private void FindPoint()
+    {
+        try
+        {
+            FollowPoint = GameObject.FindWithTag("Bobber").transform;
+        }
+        catch
+        { 
+        
+        }
     }
 
 

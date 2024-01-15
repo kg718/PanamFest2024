@@ -2,18 +2,14 @@ using UnityEngine;
 
 public class SeaMine : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField] private GameObject ExplosionVFX;
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Game Over");
+        if(collision.gameObject.tag == "Player")
+        {
+            Instantiate(ExplosionVFX, transform.position, Quaternion.identity);
+            Debug.Log("Game Over");
+        }
     }
 }

@@ -1,4 +1,3 @@
-using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,11 +10,7 @@ public class HookCasting : MonoBehaviour
     [SerializeField] private Transform CastPoint;
     [SerializeField] private Transform HookPoint;
     [SerializeField] private GameObject BobberPrefab;
-    [HideInInspector] public BobberHooking Hooking;
 
-    [SerializeField] private CinemachineVirtualCamera VCam1;
-    [SerializeField] private CinemachineVirtualCamera VCam2;
- 
     private GameObject Bobber;
 
     void Start()
@@ -23,8 +18,6 @@ public class HookCasting : MonoBehaviour
         Controls = new MasterInput();
         Controls.Enable();
         movement = GetComponent<PlayerMovement>();
-        VCam1.Priority = 1;
-        VCam2.Priority = 0;
     }
 
     void Update()
@@ -41,32 +34,20 @@ public class HookCasting : MonoBehaviour
 
     public void Cast()
     {
-        if (Bobber == null)
+        if(Bobber == null)
         {
             Bobber = Instantiate(BobberPrefab, CastPoint.position, Quaternion.identity);
             BobberLaunch Launcher = Bobber.GetComponent<BobberLaunch>();
             Launcher.TargetPosition = HookPoint.position;
-            VCam1.Priority = 0;
-            VCam2.Priority = 1;
         }
         else
         {
-            if (!Hooking.HasHookedFish)
-            {
-                RetractLine();
-            }
+            Destroy(Bobber);
         }
     }
 
     public void OnCastLine()
     {
         Cast();
-    }
-
-    public void RetractLine()
-    {
-        Destroy(Bobber);
-        VCam1.Priority = 1;
-        VCam2.Priority = 0;
     }
 }

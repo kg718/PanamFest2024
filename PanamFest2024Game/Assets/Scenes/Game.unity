@@ -405,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 454403713}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000013402088, y: 0.714852, z: -0.6992758, w: 0.00000013700617}
-  m_LocalPosition: {x: 0, y: 9.938666, z: 0.13318706}
+  m_LocalPosition: {x: 0, y: 14.330395, z: 0.13318706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -565,7 +565,7 @@ Transform:
   m_GameObject: {fileID: 995629885}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000013402088, y: 0.714852, z: -0.6992758, w: 0.00000013700617}
-  m_LocalPosition: {x: 0, y: 9.938666, z: 0.13318706}
+  m_LocalPosition: {x: 0, y: 14.330395, z: 0.13318706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -808,7 +808,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
   m_FrequencyGain: 5
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: -34.653564, y: -378.8296, z: -571.8406}
 --- !u!4 &1286190643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7698452391193746858, guid: 3f846797cc315de4bad57fb48b58d4fe, type: 3}
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 9.938666, z: 0.13318706}
+  m_FollowOffset: {x: 0, y: 14.330395, z: 0.13318706}
   m_XDamping: 0.4
   m_YDamping: 0.4
   m_ZDamping: 0.4
@@ -1424,7 +1424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2139175306552743681}
-  isPaused: 0
 --- !u!114 &790831581535575677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2797,63 +2796,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &8715863275024849271
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.102
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.377
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2836774493604470487, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8833453181665304570, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-      propertyPath: m_Name
-      value: SeaMine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
 --- !u!82 &9082109873278335643
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2979,7 +2921,6 @@ SceneRoots:
   - {fileID: 16833298}
   - {fileID: 454403715}
   - {fileID: 1083985459}
-  - {fileID: 8715863275024849271}
   - {fileID: 1996657042}
   - {fileID: 1695521646}
   - {fileID: 454624728868799898}

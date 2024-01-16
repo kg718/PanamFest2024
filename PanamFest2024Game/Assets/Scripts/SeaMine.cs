@@ -15,6 +15,7 @@ public class SeaMine : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             InvokeRepeating("DecrementShakeTime", 0f, 0.1f);
+            //ShakeCamera();
             VCam = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
             movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
             movement.enabled = false;
@@ -38,6 +39,6 @@ public class SeaMine : MonoBehaviour
 
     private void DecrementShakeTime()
     {
-
+        CurrentShakeTime -= 0.1f;
     }
 }

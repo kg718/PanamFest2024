@@ -43,7 +43,6 @@ public class HookCasting : MonoBehaviour
     {
         if (Bobber == null)
         {
-
             Bobber = Instantiate(BobberPrefab, CastPoint.position, Quaternion.identity);
             BobberLaunch Launcher = Bobber.GetComponent<BobberLaunch>();
             Launcher.TargetPosition = HookPoint.position;
@@ -54,9 +53,7 @@ public class HookCasting : MonoBehaviour
         {
             if (!Hooking.HasHookedFish)
             {
-                Destroy(Bobber);
-                VCam1.Priority = 1;
-                VCam2.Priority = 0;
+                RetractLine();
             }
         }
     }
@@ -64,5 +61,12 @@ public class HookCasting : MonoBehaviour
     public void OnCastLine()
     {
         Cast();
+    }
+
+    public void RetractLine()
+    {
+        Destroy(Bobber);
+        VCam1.Priority = 1;
+        VCam2.Priority = 0;
     }
 }

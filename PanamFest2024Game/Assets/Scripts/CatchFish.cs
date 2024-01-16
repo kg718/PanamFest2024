@@ -8,6 +8,7 @@ public class CatchFish : MonoBehaviour
     private GameObject BobberObject;
     private bool Hooked = false;
     private BobberHooking Hooking;
+    private HookCasting Casting;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class CatchFish : MonoBehaviour
                 rb.velocity = Vector3.zero;
                 Movement.enabled = false;
                 Hooking = BobberObject.gameObject.GetComponent<BobberHooking>();
+                Casting = GameObject.FindWithTag("Player").GetComponent<HookCasting>();
                 Hooking.HasHookedFish = true;
                 Hooked = true;
             }
@@ -41,6 +43,7 @@ public class CatchFish : MonoBehaviour
         if(other.gameObject.tag == "Player" && Hooked)
         {
             Hooking.HasHookedFish = false;
+            Casting.RetractLine();
             Destroy(gameObject);
         }
     }

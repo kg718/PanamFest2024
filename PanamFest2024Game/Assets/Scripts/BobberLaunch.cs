@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class BobberLaunch : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BobberLaunch : MonoBehaviour
     [SerializeField] private float CastDelay;
     private float CurrentCastDelay;
     private Transform CastPoint;
+    private BobberHooking Hooking;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class BobberLaunch : MonoBehaviour
         Casting = true;
         CurrentCastDelay = CastDelay;
         CastPoint = GameObject.Find("CastPoint").transform;
+        Hooking = GetComponent<BobberHooking>();
     }
 
     private void Update()
@@ -56,4 +59,12 @@ public class BobberLaunch : MonoBehaviour
     {
         InputDir = _Value.Get<Vector2>();
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player" && Hooking.HasHookedFish)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 }

@@ -202,6 +202,8 @@ MonoBehaviour:
   HookPoint: {fileID: 3178480684840581346}
   BobberPrefab: {fileID: 6466845158812444573, guid: 08a5629955cd5fb4db91bf8ec35344be, type: 3}
   Hooking: {fileID: 0}
+  VCam1: {fileID: 0}
+  VCam2: {fileID: 0}
 --- !u!135 &551170467471641995
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.1964376
+  m_Radius: 1.31406
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2510676110820499516
 GameObject:

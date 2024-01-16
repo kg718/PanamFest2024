@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FishSpawning : MonoBehaviour
 {
+    [HideInInspector] public List<GameObject> ExistingFish;
     [SerializeField] private List<GameObject> FishTypes;
     [SerializeField] private int Range;
     [SerializeField] private float SpawnFrequency;

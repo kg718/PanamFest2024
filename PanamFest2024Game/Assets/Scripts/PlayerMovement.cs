@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 AimDir;
     [SerializeField] private float RotateSpeed;
 
+    float MouseX;
+    float MouseY;
+
     void Start()
     {
         Controls = new MasterInput();
@@ -36,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(AimDir, Vector3.up), RotateSpeed);
         }
+        MouseX = Controls.Player.MovementX.ReadValue<float>();
+        MouseY = Controls.Player.MovementY.ReadValue<float>();
+        InputDir = new Vector2(MouseX, MouseY);
     }
 
     void FixedUpdate()
@@ -48,11 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMovement(InputValue _Value)
     {
-        InputDir = _Value.Get<Vector2>();
+        //InputDir = _Value.Get<Vector2>();
     }
 
     void Accelerate()
     {
-        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y) * MoveSpeed, ForceMode.Force);
+        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y).normalized * MoveSpeed, ForceMode.Force);
     }
 }

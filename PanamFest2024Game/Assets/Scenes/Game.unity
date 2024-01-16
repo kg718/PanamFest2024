@@ -538,7 +538,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -565,7 +565,7 @@ Transform:
   m_GameObject: {fileID: 995629885}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000013402088, y: 0.714852, z: -0.6992758, w: 0.00000013700617}
-  m_LocalPosition: {x: 0.04, y: 24.038681, z: -0.24681294}
+  m_LocalPosition: {x: 0, y: 14.330395, z: 0.13318706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1101,9 +1101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObstacleTypes:
   - {fileID: 8833453181665304570, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
-  ObstacleNum: 750
-  MinCoord: {x: -500, y: -500}
-  MaxCoord: {x: 500, y: 500}
+  ObstacleNum: 450
+  MinCoord: {x: -100, y: -100}
+  MaxCoord: {x: 100, y: 100}
 --- !u!224 &1976409125 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6950065973459800674, guid: eebab96fe96cd8545a25416ff5fd52d9, type: 3}

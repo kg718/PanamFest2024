@@ -18,6 +18,9 @@ public class BobberLaunch : MonoBehaviour
     private Transform CastPoint;
     private BobberHooking Hooking;
 
+    float MouseX;
+    float MouseY;
+
     void Start()
     {
         Controls = new MasterInput();
@@ -39,6 +42,9 @@ public class BobberLaunch : MonoBehaviour
         }
         Line.SetPosition(0, transform.position);
         Line.SetPosition(1, CastPoint.position);
+        MouseX = Controls.Player.MovementX.ReadValue<float>();
+        MouseY = Controls.Player.MovementY.ReadValue<float>();
+        InputDir = new Vector2(MouseX, MouseY);
     }
 
     void FixedUpdate()
@@ -52,12 +58,12 @@ public class BobberLaunch : MonoBehaviour
 
     private void MoveBobber()
     {
-        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y) * MoveSpeed, ForceMode.Force);
+        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y).normalized * MoveSpeed, ForceMode.Force);
     }
 
     public void OnMovement(InputValue _Value)
     {
-        InputDir = _Value.Get<Vector2>();
+        //InputDir = _Value.Get<Vector2>();
     }
 
     //private void OnTriggerEnter(Collider other)

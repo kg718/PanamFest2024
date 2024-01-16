@@ -29,12 +29,12 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""d6387e4c-51ec-450d-ba9a-3b881a405ed1"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Accelerate"",
@@ -53,6 +53,24 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MovementX"",
+                    ""type"": ""Value"",
+                    ""id"": ""50ed2ff7-21a8-4590-ad06-4352705e97ae"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MovementY"",
+                    ""type"": ""Value"",
+                    ""id"": ""59bb149d-b793-4ae2-829c-55d4958aba5c"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -132,6 +150,39 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
                     ""action"": ""CastLine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""934b0958-3b5f-4e00-8aea-396059d02c1b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f12cb208-4ff3-4361-a158-936ca440c62b"",
+                    ""path"": ""<Mouse>/delta/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48ed1d86-fd2e-4513-9e1a-d6f1c29be25b"",
+                    ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +194,8 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Accelerate = m_Player.FindAction("Accelerate", throwIfNotFound: true);
         m_Player_CastLine = m_Player.FindAction("CastLine", throwIfNotFound: true);
+        m_Player_MovementX = m_Player.FindAction("MovementX", throwIfNotFound: true);
+        m_Player_MovementY = m_Player.FindAction("MovementY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +260,8 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Accelerate;
     private readonly InputAction m_Player_CastLine;
+    private readonly InputAction m_Player_MovementX;
+    private readonly InputAction m_Player_MovementY;
     public struct PlayerActions
     {
         private @MasterInput m_Wrapper;
@@ -214,6 +269,8 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Accelerate => m_Wrapper.m_Player_Accelerate;
         public InputAction @CastLine => m_Wrapper.m_Player_CastLine;
+        public InputAction @MovementX => m_Wrapper.m_Player_MovementX;
+        public InputAction @MovementY => m_Wrapper.m_Player_MovementY;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +289,12 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
             @CastLine.started += instance.OnCastLine;
             @CastLine.performed += instance.OnCastLine;
             @CastLine.canceled += instance.OnCastLine;
+            @MovementX.started += instance.OnMovementX;
+            @MovementX.performed += instance.OnMovementX;
+            @MovementX.canceled += instance.OnMovementX;
+            @MovementY.started += instance.OnMovementY;
+            @MovementY.performed += instance.OnMovementY;
+            @MovementY.canceled += instance.OnMovementY;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -245,6 +308,12 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
             @CastLine.started -= instance.OnCastLine;
             @CastLine.performed -= instance.OnCastLine;
             @CastLine.canceled -= instance.OnCastLine;
+            @MovementX.started -= instance.OnMovementX;
+            @MovementX.performed -= instance.OnMovementX;
+            @MovementX.canceled -= instance.OnMovementX;
+            @MovementY.started -= instance.OnMovementY;
+            @MovementY.performed -= instance.OnMovementY;
+            @MovementY.canceled -= instance.OnMovementY;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -267,5 +336,7 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAccelerate(InputAction.CallbackContext context);
         void OnCastLine(InputAction.CallbackContext context);
+        void OnMovementX(InputAction.CallbackContext context);
+        void OnMovementY(InputAction.CallbackContext context);
     }
 }

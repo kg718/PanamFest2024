@@ -25,6 +25,6 @@ public class ObstacleSpawning : MonoBehaviour
         int obstacleselection = Random.Range(0, ObstacleTypes.Count);
         int xcoord = Mathf.RoundToInt(Random.Range(MinCoord.x, MaxCoord.x));
         int zcoord = Mathf.RoundToInt(Random.Range(MinCoord.y, MaxCoord.y));
-        GameObject NewFish = Instantiate(ObstacleTypes[obstacleselection], new Vector3(xcoord, 0.1f, zcoord), Quaternion.identity);
+        GameObject NewFish = Instantiate(ObstacleTypes[obstacleselection], new Vector3(xcoord, 0.377f, zcoord), Quaternion.identity);
     }
 }

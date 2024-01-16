@@ -38,11 +38,6 @@ public class CatchFish : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Bobber")

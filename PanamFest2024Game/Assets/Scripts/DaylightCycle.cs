@@ -2,19 +2,12 @@ using UnityEngine;
 
 public class DaylightCycle : MonoBehaviour
 {
-    private bool IsDay;
-    [SerializeField] private float DayDuration;
-    [SerializeField] private Color DayColour;
-    [SerializeField] private Color EveningColour;
-    [SerializeField] private Color NightColour;
+    [SerializeField] private float RevolutionSpeed;
+    private float CurrentRotation;
 
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        CurrentRotation += RevolutionSpeed * Time.deltaTime;
+        transform.localEulerAngles = new Vector3(CurrentRotation, CurrentRotation, 0);
     }
 }

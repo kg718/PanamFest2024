@@ -31,7 +31,14 @@ public class HookCasting : MonoBehaviour
     {
         if(Bobber == null)
         {
-            movement.enabled = true;
+            try
+            {
+                movement.enabled = true;
+            }
+            catch
+            {
+
+            }
         }
         else
         {

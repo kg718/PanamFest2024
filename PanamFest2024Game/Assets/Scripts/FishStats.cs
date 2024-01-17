@@ -6,10 +6,10 @@ public class FishStats : MonoBehaviour
     [SerializeField] private FishSize Size;
     [HideInInspector] public float Weight;
     [HideInInspector] public float Length;
-    [HideInInspector] public Sprite FishName;
+    [HideInInspector] public string FishName;
     [HideInInspector] public Sprite FishSprite;
 
-    [SerializeField] private List<Sprite> FishNames;
+    [SerializeField] private List<string> FishNames;
     [SerializeField] private List<Sprite> FishSprites;
 
     private enum FishSize {Small, Medium, Large}
@@ -48,7 +48,7 @@ public class FishStats : MonoBehaviour
         FishName = FishNames[FishSelection];
         FishSprite = FishSprites[FishSelection];
         Panels.DisplayCatchPanel();
-        Panels.SetValues(Weight, Length);
+        Panels.SetValues(Weight, Length, FishSprite, FishName);
     }
 
 

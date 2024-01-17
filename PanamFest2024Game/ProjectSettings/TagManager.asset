@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bobber
   - MainCam
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SeaMine : MonoBehaviour
@@ -6,8 +7,14 @@ public class SeaMine : MonoBehaviour
     private Animator TransitionAnimator;
     private PlayerMovement movement;
     private CamerShake shake;
-   
+    private GameOver GameOverScene;
 
+
+    private void Start()
+    {
+        GameOverScene = GameObject.FindWithTag("Canvas").transform.Find("GameOver").GetComponent<GameOver>();
+        GameOverScene.gameObject.SetActive(false);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -20,7 +27,8 @@ public class SeaMine : MonoBehaviour
             Instantiate(ExplosionVFX, transform.position, Quaternion.identity);
             Invoke("AnimateOut", 1f);
             Debug.Log("Game Over");
-          
+            GameOverScene.GameOverScreen();
+            
         }
     }
 
@@ -29,4 +37,6 @@ public class SeaMine : MonoBehaviour
         TransitionAnimator.Play("Transition_Out");
        
     }
+    
+    
 }

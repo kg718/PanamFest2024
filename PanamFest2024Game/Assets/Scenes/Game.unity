@@ -10946,13 +10946,14 @@ GameObject:
   - component: {fileID: 567717056}
   - component: {fileID: 567717058}
   - component: {fileID: 567717057}
+  - component: {fileID: 567717059}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &567717056
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11012,6 +11013,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567717055}
   m_CullTransparentMesh: 1
+--- !u!114 &567717059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567717055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf5d73129d510949a2ed826339a258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverPanel: {fileID: 567717055}
 --- !u!1001 &575416459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39150,6 +39164,7 @@ GameObject:
   - component: {fileID: 1693589384}
   - component: {fileID: 1693589383}
   - component: {fileID: 1693589382}
+  - component: {fileID: 1693589385}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -39258,6 +39273,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693589380}
   m_CullTransparentMesh: 1
+--- !u!114 &1693589385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693589380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f134abb3dda39c4bac8883217d13183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainLevel: Game
 --- !u!1 &1695521643
 GameObject:
   m_ObjectHideFlags: 0
@@ -45797,7 +45825,7 @@ GameObject:
   - component: {fileID: 1996657039}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

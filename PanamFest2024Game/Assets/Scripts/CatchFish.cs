@@ -15,6 +15,7 @@ public class CatchFish : MonoBehaviour
     [SerializeField] private Transform CenterPoint;
     private Transform BoatPoint;
     [SerializeField] private float RotateSpeed;
+    private FishStats Stats;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class CatchFish : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Spawn = GameObject.Find("FishSpawner").GetComponent<FishSpawning>();
         BoatPoint = GameObject.FindWithTag("Player").transform;
+        Stats = GetComponent<FishStats>();
     }
 
     void Update()
@@ -56,6 +58,7 @@ public class CatchFish : MonoBehaviour
 
         if(other.gameObject.tag == "Player" && Hooked)
         {
+            Stats.CalculateValues();
             Hooking.HasHookedFish = false;
             Casting.RetractLine();
             Spawn.CurrentFishTotal -= 1;

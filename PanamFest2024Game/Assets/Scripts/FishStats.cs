@@ -14,9 +14,11 @@ public class FishStats : MonoBehaviour
 
     private enum FishSize {Small, Medium, Large}
 
+    private PanelActivator Panels;
+
     void Start()
     {
-        
+        Panels = GameObject.FindWithTag("Canvas").GetComponent<PanelActivator>();
     }
 
     void Update()
@@ -45,5 +47,9 @@ public class FishStats : MonoBehaviour
         }
         FishName = FishNames[FishSelection];
         FishSprite = FishSprites[FishSelection];
+        Panels.DisplayCatchPanel();
+        Panels.SetValues(Weight, Length);
     }
+
+
 }

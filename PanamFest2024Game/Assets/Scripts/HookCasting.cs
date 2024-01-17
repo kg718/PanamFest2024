@@ -42,7 +42,14 @@ public class HookCasting : MonoBehaviour
         }
         else
         {
-            movement.enabled = false;
+            try
+            {
+                movement.enabled = false;
+            }
+            catch
+            { 
+            
+            }
         }
     }
 

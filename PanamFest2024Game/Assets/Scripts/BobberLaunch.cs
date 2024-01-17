@@ -20,6 +20,9 @@ public class BobberLaunch : MonoBehaviour
     private HookCasting HCasting;
     private float InputCancelTime;
 
+    [HideInInspector] public bool ControlsInvertedX = false;
+    [HideInInspector] public bool ControlsInvertedY = false;
+
     float MouseX;
     float MouseY;
 
@@ -55,8 +58,23 @@ public class BobberLaunch : MonoBehaviour
         Line.SetPosition(1, CastPoint.position);
         //MouseX = Controls.Player.MovementX.ReadValue<float>();
         //MouseY = Controls.Player.MovementY.ReadValue<float>();
-        MouseX += Input.GetAxis("Mouse X");
-        MouseY += Input.GetAxis("Mouse Y");
+        if(!ControlsInvertedX)
+        {
+            MouseX += Input.GetAxis("Mouse X");
+        }
+        else
+        {
+            MouseX -= Input.GetAxis("Mouse X");
+        }
+        if (!ControlsInvertedY)
+        {
+            MouseY += Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            MouseY -= Input.GetAxis("Mouse Y");
+        }
+
         InputDir = new Vector2(MouseX, MouseY);
         if(transform.position.y < -10f)
         {

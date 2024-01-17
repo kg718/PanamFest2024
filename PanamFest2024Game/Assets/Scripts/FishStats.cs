@@ -6,10 +6,10 @@ public class FishStats : MonoBehaviour
     [SerializeField] private FishSize Size;
     [HideInInspector] public float Weight;
     [HideInInspector] public float Length;
-    [HideInInspector] public string FishName;
+    [HideInInspector] public Sprite FishName;
     [HideInInspector] public Sprite FishSprite;
 
-    [SerializeField] private List<string> FishNames;
+    [SerializeField] private List<Sprite> FishNames;
     [SerializeField] private List<Sprite> FishSprites;
 
     private enum FishSize {Small, Medium, Large}

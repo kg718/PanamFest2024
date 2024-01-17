@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 AimDir;
     [SerializeField] private float RotateSpeed;
 
+    [HideInInspector] public bool ControlsInvertedX = false;
+    [HideInInspector] public bool ControlsInvertedY = false;
     float MouseX;
     float MouseY;
 
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         Controls = new MasterInput();
         Controls.Enable();
         rb = GetComponent<Rigidbody>();
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void Update()
@@ -44,10 +48,30 @@ public class PlayerMovement : MonoBehaviour
         }
         //MouseX = Controls.Player.MovementX.ReadValue<float>();
         //MouseY = Controls.Player.MovementY.ReadValue<float>();
-        MouseX += Input.GetAxis("Mouse X");
-        MouseY += Input.GetAxis("Mouse Y");
+        if (!ControlsInvertedX)
+        {
+            MouseX += Input.GetAxis("Mouse X");
+        }
+        else
+        {
+            MouseX -= Input.GetAxis("Mouse X");
+        }
+        if (!ControlsInvertedY)
+        {
+            MouseY += Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            MouseY -= Input.GetAxis("Mouse Y");
+        }
         InputDir = new Vector2(MouseX, MouseY).normalized;
         //Debug.Log(InputDir.x + "" +  InputDir.y);
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void FixedUpdate()

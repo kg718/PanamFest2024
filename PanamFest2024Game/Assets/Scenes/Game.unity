@@ -518,6 +518,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1996657042}
     m_Modifications:
+    - target: {fileID: 2610604428175193162, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 2610604428175193162, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7905627479122486098, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -597,6 +605,14 @@ PrefabInstance:
     - target: {fileID: 7905627479122486098, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190842304814104031, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 8190842304814104031, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8775378331958230292, guid: 40f2f97618bba6b4099ab196fc782272, type: 3}
       propertyPath: m_Name
@@ -4730,6 +4746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObstacleTypes:
   - {fileID: 8833453181665304570, guid: 2ced7b32e22b40d449ebb9f4dba91b59, type: 3}
+  - {fileID: 3866420195284199862, guid: 022d1d30e586a624e8884ca1f99eca32, type: 3}
   ObstacleNum: 450
   MinCoord: {x: -100, y: -100}
   MaxCoord: {x: 100, y: 100}

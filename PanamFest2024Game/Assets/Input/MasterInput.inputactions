@@ -131,6 +131,28 @@
                 },
                 {
                     "name": "",
+                    "id": "3a312de8-bedb-4a03-aba2-42560b8658c3",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af2726bb-2167-40aa-bb1f-3e1f53d98ba4",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "956d2910-f199-4791-a131-47763c1c5fcc",
                     "path": "<Keyboard>/enter",
                     "interactions": "",

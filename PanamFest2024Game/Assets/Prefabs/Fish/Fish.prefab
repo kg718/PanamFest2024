@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3804325197031821475}
   - component: {fileID: 7727967614715507801}
   - component: {fileID: 5648094536068494830}
+  - component: {fileID: 9011898872602836052}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -110,7 +111,6 @@ MonoBehaviour:
   CenterPoint: {fileID: 8867198692128458689}
   FrontPoint: {fileID: 8149592180582531132}
   MoveSpeed: 0.7
-  FarSpeed: 2
   RotateSpeed: 1
 --- !u!135 &7727967614715507801
 SphereCollider:
@@ -147,6 +147,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CenterPoint: {fileID: 8867198692128458689}
   RotateSpeed: 3
+--- !u!114 &9011898872602836052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666120286217125863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48f0a080e05ea649adf3fc8d54da760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: 1
+  Weight: 0
+  Length: 0
+  FishName: 
+  FishSprite: {fileID: 0}
+  FishNames:
+  - Largemouth Bass
+  - Rainbow Trout
+  FishSprites:
+  - {fileID: 21300000, guid: 822a05ccd6b2eed4caabe0f4cf1dfd7b, type: 3}
+  - {fileID: 21300000, guid: 45b518cc2d8f97f458a0a82b6904dba7, type: 3}
 --- !u!1 &2838430322231064106
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,10 +13,13 @@ public class BobberLaunch : MonoBehaviour
     [HideInInspector] public Vector3 TargetPosition;
     private bool Casting;
     [SerializeField] private float MoveSpeed;
+    [SerializeField] private float CaughtSpeed;
     [SerializeField] private float CastDelay;
     private float CurrentCastDelay;
     private Transform CastPoint;
     private BobberHooking Hooking;
+    private HookCasting HCasting;
+
 
     float MouseX;
     float MouseY;
@@ -31,6 +34,7 @@ public class BobberLaunch : MonoBehaviour
         CurrentCastDelay = CastDelay;
         CastPoint = GameObject.Find("CastPoint").transform;
         Hooking = GetComponent<BobberHooking>();
+        HCasting = GameObject.FindWithTag("Player").GetComponent<HookCasting>();
     }
 
     private void Update()
@@ -45,6 +49,10 @@ public class BobberLaunch : MonoBehaviour
         MouseX = Controls.Player.MovementX.ReadValue<float>();
         MouseY = Controls.Player.MovementY.ReadValue<float>();
         InputDir = new Vector2(MouseX, MouseY);
+        if(transform.position.y < -10f)
+        {
+            HCasting.RetractLine();
+        }
     }
 
     void FixedUpdate()
@@ -58,7 +66,14 @@ public class BobberLaunch : MonoBehaviour
 
     private void MoveBobber()
     {
-        rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y).normalized * MoveSpeed, ForceMode.Force);
+        if (!Hooking.HasHookedFish)
+        {
+            rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y).normalized * MoveSpeed, ForceMode.Force);
+        }
+        else
+        {
+            rb.AddForce(new Vector3(-InputDir.x, 0f, -InputDir.y).normalized * CaughtSpeed, ForceMode.Force);
+        }
     }
 
     public void OnMovement(InputValue _Value)

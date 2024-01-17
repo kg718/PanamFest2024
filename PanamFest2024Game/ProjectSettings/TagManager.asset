@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bobber
   - MainCam
+  - Obstacle
   layers:
   - Default
   - TransparentFX

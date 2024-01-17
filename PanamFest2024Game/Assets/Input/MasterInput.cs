@@ -142,6 +142,17 @@ public partial class @MasterInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""3b2d3e0d-aea7-4137-a8e2-e9066d8d7976"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""956d2910-f199-4791-a131-47763c1c5fcc"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",

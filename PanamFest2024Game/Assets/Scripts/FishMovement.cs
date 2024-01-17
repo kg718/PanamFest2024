@@ -23,7 +23,6 @@ public class FishMovement : MonoBehaviour
     {
         Dir = CenterPoint.position - FrontPoint.position;
         TurnDir = new Vector3(CenterPoint.position.x, 0f, CenterPoint.position.z) - new Vector3(BoatPoint.position.x, 0f, BoatPoint.position.z);
-
     }
 
     private void FixedUpdate()
@@ -37,6 +36,7 @@ public class FishMovement : MonoBehaviour
 
     private void Swim()
     {
-        rb.AddForce(Dir.normalized * MoveSpeed, ForceMode.Force); 
+        Vector3.MoveTowards(transform.position, BoatPoint.position, MoveSpeed);
+        rb.AddForce(Dir.normalized * MoveSpeed, ForceMode.Force);
     }
 }

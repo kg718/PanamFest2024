@@ -20,6 +20,10 @@ public class SeaMine : MonoBehaviour
             Invoke("AnimateOut", 1f);
             Debug.Log("Game Over");
         }
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void AnimateOut()

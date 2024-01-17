@@ -109,7 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CenterPoint: {fileID: 8867198692128458689}
   FrontPoint: {fileID: 8149592180582531132}
-  MoveSpeed: 1.5
+  MoveSpeed: 1.3
+  FarSpeed: 2
   RotateSpeed: 1
 --- !u!135 &7727967614715507801
 SphereCollider:
@@ -118,7 +119,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2666120286217125863}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b0e74f2ecfcc0e045a8c32c36d28ce29, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

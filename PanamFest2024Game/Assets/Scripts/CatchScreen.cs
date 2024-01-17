@@ -17,5 +17,6 @@ public class CatchScreen : MonoBehaviour
     public void CloseMenu()
     {
         gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 }

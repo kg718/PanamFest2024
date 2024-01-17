@@ -18,6 +18,7 @@ public class PanelActivator : MonoBehaviour
     public void DisplayCatchPanel()
     {
         CatchPanel.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void SetValues(float _Weight, float _Length, Sprite _FishSprite, string _NameSprite)

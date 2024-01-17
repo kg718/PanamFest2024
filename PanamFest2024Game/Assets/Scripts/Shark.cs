@@ -27,6 +27,7 @@ public class Shark : MonoBehaviour
             Destroy(movement);
             Invoke("AnimateOut", 1f);
             GameOverScene.GameOverScreen();
+            Cursor.visible = true;
         }
     }
 

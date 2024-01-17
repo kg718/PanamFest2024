@@ -28,6 +28,7 @@ public class SeaMine : MonoBehaviour
             Invoke("AnimateOut", 1f);
             Debug.Log("Game Over");
             GameOverScene.GameOverScreen();
+            Cursor.visible = true;
             
         }
         if(collision.gameObject.tag == "Obstacle")

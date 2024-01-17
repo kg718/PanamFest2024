@@ -6,6 +6,7 @@ public class SeaMine : MonoBehaviour
     private Animator TransitionAnimator;
     private PlayerMovement movement;
     private CamerShake shake;
+   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,11 +20,13 @@ public class SeaMine : MonoBehaviour
             Instantiate(ExplosionVFX, transform.position, Quaternion.identity);
             Invoke("AnimateOut", 1f);
             Debug.Log("Game Over");
+          
         }
     }
 
     private void AnimateOut()
     {
         TransitionAnimator.Play("Transition_Out");
+       
     }
 }

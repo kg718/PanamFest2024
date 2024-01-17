@@ -837,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7066a3ca433edb54c92e327af315a4e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.23
+      value: -5.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7066a3ca433edb54c92e327af315a4e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9697,7 +9697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0acd4a7f6eb5b254180544306231b6e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.806981
+      value: -13.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0acd4a7f6eb5b254180544306231b6e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22876,7 +22876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -650, y: -142.77274}
+  m_AnchoredPosition: {x: -633, y: -142.77274}
   m_SizeDelta: {x: 412.681, y: 82.6333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164648872
@@ -22901,8 +22901,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
-  m_sharedMaterial: {fileID: 5974809024956148925, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
+  m_sharedMaterial: {fileID: 8197957453779846258, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -43149,8 +43149,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '"0.0" KG'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
-  m_sharedMaterial: {fileID: 5974809024956148925, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
+  m_sharedMaterial: {fileID: 8197957453779846258, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -44230,8 +44230,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '"0.0" cm'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
-  m_sharedMaterial: {fileID: 5974809024956148925, guid: 218de56fa8e3d22439af8da760dd2b68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
+  m_sharedMaterial: {fileID: 8197957453779846258, guid: 2c6bcbca9fa19f14bb49212881bd64ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -48907,6 +48907,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7316654591631857773, guid: 0f0958212e9cb78409cacd22c4886953, type: 3}
+      propertyPath: FishTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316654591631857773, guid: 0f0958212e9cb78409cacd22c4886953, type: 3}
+      propertyPath: FishTypes.Array.data[3]
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: d61545411ae3763448e858ad95a981b2, type: 3}
     - target: {fileID: 8255931153787524172, guid: 0f0958212e9cb78409cacd22c4886953, type: 3}
       propertyPath: m_Name
       value: FishSpawner

@@ -26,7 +26,8 @@ public class FollowBobber : MonoBehaviour
 
     public void OnCastLine()
     {
-        FindPoint();
+        Invoke("FindPoint", 0.1f);
+        //FindPoint();
     }
 
     private void FindPoint()

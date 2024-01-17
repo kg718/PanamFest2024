@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Moving = false;
+            MouseX = 0f;
+            MouseY = 0f;
         }
 
         AimDir = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -39,9 +41,12 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(AimDir, Vector3.up), RotateSpeed);
         }
-        MouseX = Controls.Player.MovementX.ReadValue<float>();
-        MouseY = Controls.Player.MovementY.ReadValue<float>();
-        InputDir = new Vector2(MouseX, MouseY);
+        //MouseX = Controls.Player.MovementX.ReadValue<float>();
+        //MouseY = Controls.Player.MovementY.ReadValue<float>();
+        MouseX += Input.GetAxis("Mouse X");
+        MouseY += Input.GetAxis("Mouse Y");
+        InputDir = new Vector2(MouseX, MouseY).normalized;
+        //Debug.Log(InputDir.x + "" +  InputDir.y);
     }
 
     void FixedUpdate()

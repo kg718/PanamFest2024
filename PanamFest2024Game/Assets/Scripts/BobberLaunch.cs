@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
 
 public class BobberLaunch : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class BobberLaunch : MonoBehaviour
     private Transform CastPoint;
     private BobberHooking Hooking;
     private HookCasting HCasting;
-
+    private float InputCancelTime;
 
     float MouseX;
     float MouseY;
@@ -35,10 +34,18 @@ public class BobberLaunch : MonoBehaviour
         CastPoint = GameObject.Find("CastPoint").transform;
         Hooking = GetComponent<BobberHooking>();
         HCasting = GameObject.FindWithTag("Player").GetComponent<HookCasting>();
+        InputCancelTime = 1f;
     }
 
     private void Update()
     {
+        InputCancelTime -= Time.deltaTime;
+        if(InputCancelTime < 0f)
+        {
+            MouseX = 0f;
+            MouseY = 0f;
+            InputCancelTime = 1f;
+        }
         CurrentCastDelay -= Time.deltaTime;
         if(CurrentCastDelay <= 0f)
         {
@@ -46,8 +53,10 @@ public class BobberLaunch : MonoBehaviour
         }
         Line.SetPosition(0, transform.position);
         Line.SetPosition(1, CastPoint.position);
-        MouseX = Controls.Player.MovementX.ReadValue<float>();
-        MouseY = Controls.Player.MovementY.ReadValue<float>();
+        //MouseX = Controls.Player.MovementX.ReadValue<float>();
+        //MouseY = Controls.Player.MovementY.ReadValue<float>();
+        MouseX += Input.GetAxis("Mouse X");
+        MouseY += Input.GetAxis("Mouse Y");
         InputDir = new Vector2(MouseX, MouseY);
         if(transform.position.y < -10f)
         {

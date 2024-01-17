@@ -25,6 +25,9 @@ public class ObstacleSpawning : MonoBehaviour
         int obstacleselection = Random.Range(0, ObstacleTypes.Count);
         int xcoord = Mathf.RoundToInt(Random.Range(MinCoord.x, MaxCoord.x));
         int zcoord = Mathf.RoundToInt(Random.Range(MinCoord.y, MaxCoord.y));
-        GameObject NewFish = Instantiate(ObstacleTypes[obstacleselection], new Vector3(xcoord, 0.377f, zcoord), Quaternion.identity);
+        if(!((xcoord > -8 && xcoord < 8) && (zcoord > -8 && zcoord < 8)))
+        {
+            GameObject NewFish = Instantiate(ObstacleTypes[obstacleselection], new Vector3(xcoord, 0.377f, zcoord), Quaternion.identity);
+        }
     }
 }

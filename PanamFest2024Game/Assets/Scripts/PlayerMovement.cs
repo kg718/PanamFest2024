@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if(Controls.Player.Accelerate.IsInProgress())
         {
             Moving = true;
+            
         }
         else
         {

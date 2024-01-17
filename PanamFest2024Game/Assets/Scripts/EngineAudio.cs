@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class EngineAudio : MonoBehaviour
 {
-  public AudioSource boatEngine;
+  public AudioSource boatSound;
 
     void Start()
     {
-        boatEngine = GetComponent<AudioSource>();
+        boatSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!boatEngine.isPlaying)
+            if (!boatSound.isPlaying)
             {
-                boatEngine.Play();
+                boatSound.Play();
             }
         }
         else
         {
-            if (boatEngine.isPlaying)
+            if (boatSound.isPlaying)
             {
-                boatEngine.Stop();
+                boatSound.Stop();
             }
         }
     }
